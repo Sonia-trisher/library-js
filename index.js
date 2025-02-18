@@ -108,17 +108,19 @@ const SearchBook = () => {
 function DisplayBooks (){
     return library;
 }
-function DisplayAvailableBooks(isAvailable){
-    var books = [];
-    if(isAvailable){
-       books = library.filter(book => book.available)
-    }else{
-        books = library.filter(book => !book.available)
-    }
-  return books;
+// function DisplayAvailableBooks(isAvailable){
+//     var books = [];
+//     if(isAvailable){
+//        books = library.filter(book => book.available)
+//     }else{
+//         books = library.filter(book => !book.available)
+//     }
+//   return books;
     
-}
+// }
 
    
 console.log(DisplayBooks())
+console.log("hello");
+
 
