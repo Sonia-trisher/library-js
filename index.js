@@ -3,7 +3,7 @@ const library =[
         id:'245vgr',
         title:'to killbird',
         authour:'sonia',
-        genre: 'classsic',
+        genre: 'classic',
         available:false,
         borrowedId:'245vgr',
         dateBorrowed:'2023-09-01',
@@ -15,7 +15,7 @@ const library =[
         id:'245vgr',
         title:'cl',
         authour:'dct.liliane',
-        genre: 'classsic',
+        genre: 'classic',
         available:true,
         borrowedId:'245vgr',
         dateBorrowed:'2023-09-01',
@@ -27,7 +27,7 @@ const library =[
         id:'245vgr',
         title:'1978',
         authour:'dj.eric',
-        genre: 'classsic',
+        genre: 'classic',
         available:false,
         borrowedId:'245vgr',
         dateBorrowed:'2023-09-01',
@@ -39,7 +39,7 @@ const library =[
         id:'245vgr',
         title:'mamamia',
         authour:'hardin',
-        genre: 'classsic',
+        genre: 'classic',
         available:false,
         borrowedId:'245vgr',
         dateBorrowed:'2023-09-01',
@@ -88,11 +88,25 @@ const Users =[
 ];
 
 
-function  addBooks(){
+function  addBook(book){
+    const numberOfBookBefore = library.length;
+    library.push(book);
+    const numberOfBookAfter = library.length;
+    return "Number of books added:"+ (numberOfBookAfter-numberOfBookBefore);
 
 }  
 
-function addManyBooks(){
+function addManyBooks(books){
+    // option1
+    // library.concat(books);
+    //option2
+    // const manyBooks = [...library,...books];
+    books.forEach(book=>{
+        library.push(book);
+    });
+    
+    return "Number of books add: " + books.length + 
+           "\nTotal number of books: " + library.length;
 
 }
 const UpdateBook = () => {
@@ -104,9 +118,9 @@ const RemoveBook =() => {
 const SearchBook = () => {
 
 }
-// function DisplayBooks (){
-//     return library;
-// }
+function DisplayBooks (){
+    return library;
+}
  function DisplayAvailableBooks(available){
     var books = [];
     if(available){
@@ -126,7 +140,7 @@ console.log(DisplayAvailableBooks(true))
 const newBook ={
     id:'250vgr',
     title:'The lord of the right',
-    authour:'dct.liliane',
+    authour:'dct.tit',
     genre: 'fantastic',
     available:true,
     borrowedId:'245vgr',
@@ -136,6 +150,43 @@ const newBook ={
    upDatedAt:'2023-09-01',
 
 }
+// console.log(addBook(newBook));
+// console.log(DisplayBooks().length);
+const bulkBooks = [
+    {
+    id:'251vgr',
+    title:'True love',
+    authour:'stella',
+    genre: 'thriller',
+    borrowedId:'',
+    dateBorrowed:'',
+    dateReturned:'',
+   createAt:'2023-15-01',
+   upDatedAt:'2023-15-01',
+
+    },
+    {
+    id:'252vgr',
+    title:'mother',
+    authour:'keza',
+    genre: 'fantasy',
+    borrowedId:'',
+    dateBorrowed:'',
+    dateReturned:'',
+   createAt:'2023-15-01',
+   upDatedAt:'2023-15-01',
+
+    }
+]
+// console.log(addManyBooks(bulkBooks));
+const upDate = {
+    d:'200kkk',
+    dateBorrowed:'2023-09-01',
+}
+updateBook(id,updates)
+
+
+
 
 
 
